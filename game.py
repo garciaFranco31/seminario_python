@@ -19,12 +19,15 @@ for i in range(0, times):
     print(f"{i+1}- ¿Cuánto es {number_1} {operator} {number_2}?")
     # Le pedimos al usuario el resultado
     result = int(input("resultado: "))
-    print(result)
     match operator:
       case "+": res = number_1 + number_2
       case "-": res = number_1 - number_2
       case "*": res = number_1 * number_2
-      case "/": res = number_1 / number_2
+      case "/": 
+        if (number_2 != 0):
+          res = number_1 / number_2
+        else:
+          res = 0
     if (result == res):
       print("resultado correcto")
       aciertos = aciertos + 1
