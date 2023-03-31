@@ -1,3 +1,8 @@
+#2. Indique la palabra que aparece mayor cantidad de veces en el texto del `README.md` de numpy. 
+#Copie y pegue el texto en una varible. 
+
+from collections import Counter
+
 readme = """NumPy is the fundamental package for scientific computing with Python.
 
 Website: https://www.numpy.org
@@ -43,3 +48,15 @@ Our preferred channels of communication are all public, but if you’d like to s
 We also have a biweekly community call, details of which are announced on the mailing list. You are very welcome to join.
 
 If you are new to contributing to open source, this guide helps explain why, what, and how to successfully get involved."""
+
+count = Counter()
+
+#utilizo el método replace para poder sacar los saltos de línea en caso de que los haya y
+#lower, para que me tome las palabras que son iguales aunque una esté escrita en mayúscula y la otra no.
+
+text = readme.replace('\n','').lower().split(' ')
+for word in text:
+    count[word] += 1
+
+#muestraa en pantalla la palabra que más veces se repite en el texto usitlizando most_common
+print("La palabra que más veces aparece en el texto es: ", count.most_common(1)[0][0])
