@@ -8,8 +8,8 @@ def evaluar_condicion (usuario):
 
     if "Tarea: Entrega 1" in usuario["Contexto del evento"]:
         if "Se ha visualizado el estado de la entrega" in usuario["Nombre evento"]:
-            return false #no cumple la condición, es decir, que vio el estado de la entrega
-    return true #cumple condición, no vió el estado de la entrega
+            return False #no cumple la condición, es decir, que vio el estado de la entrega
+    return True #cumple condición, no vió el estado de la entrega
 
 def generar_usuarios(diccionario_usuarios, formato=None):
     #Esta función se encarga de recibir el diccionario con los usuarios generado por el archivo csv, y aplicarles
@@ -24,9 +24,9 @@ def generar_usuarios(diccionario_usuarios, formato=None):
         return [u.lower() for u in nombres_usuarios]
    
 
-path = os.path.realpath("")
-file_path = os.path.join(path, "log_catedras.csv")
-with open (file_path) as archivo:
+ruta = os.path.realpath("")
+ruta_archivo = os.path.join(ruta, "log_catedras.csv")
+with open (ruta_archivo) as archivo:
     lector = csv.DictReader (archivo, delimiter=",")
     header = next(lector)
     Format = input("A: imprimir nombre en mayuscula \n a: imprimir nombres en minuscula")
