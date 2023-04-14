@@ -27,23 +27,23 @@ def agrupar_estudiantes_y_notas(lista_nombres, notas1, notas2):
 def calcular_promedio_por_estudiante(estudiantes):
     #genero un nuevo diccionario, en el cual ahora, se va a almacenar la nota promedio
     #de cada uno de los estudiantes
-    promedios = {}
+    promedios_estudiantes = {}
     for nombre in estudiantes:
-        promedios[nombre] = sum(estudiantes[nombre])/len(estudiantes[nombre])
+        promedios_estudiantes[nombre] = sum(estudiantes[nombre])/len(estudiantes[nombre])
     #print(promedio)
-    return promedios
+    return promedios_estudiantes
 
-def promedio_de_la_clase(promedio):
+def promedio_de_la_clase(promedios):
     #suma el total de los promedios de toda la clase y devuelve.
-    return sum(promedio.values())/len(promedio)
+    return sum(promedios.values())/len(promedios)
 
-def buscar_mayor_promedio(promedio):
+def buscar_mayor_promedio(promedios):
     #devuelve el nombre del estudiante con mayor promedio
-    return max(promedio.items(), key= lambda estudiante: estudiante[1])[0].capitalize()
+    return max(promedios.items(), key= lambda estudiante: estudiante[1])[0].capitalize()
 
-def buscar_menor_promedio(promedio):
+def buscar_menor_promedio(promedios):
     #devuelve el nombre del estudiante con menor promedio
-    return min(promedio.items(), key=lambda estudiante: estudiante[1])[0].capitalize()
+    return min(promedios.items(), key=lambda estudiante: estudiante[1])[0].capitalize()
 
 
 #main
